@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FRC Match Schedule</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main>
+		<section class="hero">
+			<p class="eyebrow">Statbotics Live Schedule</p>
+			<h1>Team 10583 Match Schedule</h1>
+			<p class="summary">
+				Pull qualification matches for Stampede in 2026 and show the match number with the full red and blue alliances.
+			</p>
+		</section>
+
+		<section class="panel" aria-labelledby="schedule-heading">
+			<div class="panel-header">
+				<div>
+					<h2 id="schedule-heading">Schedule</h2>
+					<p id="schedule-meta">Waiting for match data.</p>
+				</div>
+			</div>
+
+			<div id="status" class="status" role="status" aria-live="polite">Loading matches...</div>
+
+			<div class="schedule-wrapper">
+				<div id="schedule-root"></div>
+			</div>
+		</section>
+	</main>
+
+	<script src="main.js" defer></script>
+</body>
+</html>
