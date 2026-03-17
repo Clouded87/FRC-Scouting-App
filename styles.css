@@ -59,6 +59,12 @@ h1 {
 	max-width: 56rem;
 }
 
+.hero-actions {
+	display: flex;
+	gap: 0.75rem;
+	margin-top: 0.25rem;
+}
+
 .panel {
 	background: color-mix(in srgb, var(--panel) 92%, white 8%);
 	border: 1px solid rgba(217, 208, 194, 0.9);
@@ -86,6 +92,35 @@ h1 {
 	color: var(--muted);
 }
 
+.week-switch-button {
+	border: 1px solid color-mix(in srgb, var(--accent) 50%, #000 10%);
+	background: linear-gradient(180deg, #ffffff, #f4fbfa);
+	color: var(--accent);
+	font: inherit;
+	font-weight: 700;
+	padding: 0.65rem 1rem;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+	box-shadow: 0 4px 14px rgba(15, 118, 110, 0.14);
+}
+
+.week-switch-button:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 8px 16px rgba(15, 118, 110, 0.2);
+	background: linear-gradient(180deg, #ffffff, #eaf9f7);
+}
+
+.week-switch-button:active {
+	transform: translateY(0);
+	box-shadow: 0 3px 10px rgba(15, 118, 110, 0.14);
+}
+
+.week-switch-button:focus-visible {
+	outline: 3px solid color-mix(in srgb, var(--accent) 30%, white 70%);
+	outline-offset: 2px;
+}
+
 .status {
 	min-height: 1.5rem;
 	padding: 1rem 1.5rem 0;
@@ -106,9 +141,22 @@ h1 {
 	border-collapse: collapse;
 }
 
+.teams-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
 .schedule-table th,
 .schedule-table td {
 	padding: 1rem;
+	text-align: left;
+	border-bottom: 1px solid var(--line);
+	vertical-align: top;
+}
+
+.teams-table th,
+.teams-table td {
+	padding: 0.85rem 1rem;
 	text-align: left;
 	border-bottom: 1px solid var(--line);
 	vertical-align: top;
@@ -121,7 +169,18 @@ h1 {
 	text-transform: uppercase;
 }
 
+.teams-table th {
+	color: var(--muted);
+	font-size: 0.82rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
 .schedule-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.teams-table tbody tr:last-child td {
 	border-bottom: none;
 }
 
@@ -160,6 +219,14 @@ h1 {
 	font-weight: 600;
 }
 
+.team-key-highlight {
+	color: #ffffff;
+	background: #000000;
+	padding: 0.05rem 0.35rem;
+	border-radius: 999px;
+	font-weight: 800;
+}
+
 .empty-state {
 	margin: 0;
 	padding: 2rem 1rem;
@@ -171,6 +238,14 @@ h1 {
 	.panel-header {
 		flex-direction: column;
 		align-items: start;
+	}
+
+	.week-switch-button {
+		width: 100%;
+	}
+
+	.hero-actions {
+		width: 100%;
 	}
 
 	.schedule-table,
@@ -203,6 +278,39 @@ h1 {
 	}
 
 	.schedule-table td:last-child {
+		border-bottom: none;
+	}
+
+	.teams-table,
+	.teams-table thead,
+	.teams-table tbody,
+	.teams-table tr,
+	.teams-table th,
+	.teams-table td {
+		display: block;
+	}
+
+	.teams-table thead {
+		display: none;
+	}
+
+	.teams-table tbody {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.teams-table tr {
+		border: 1px solid var(--line);
+		border-radius: 18px;
+		background: rgba(255, 255, 255, 0.72);
+		overflow: hidden;
+	}
+
+	.teams-table td {
+		border-bottom: 1px solid var(--line);
+	}
+
+	.teams-table td:last-child {
 		border-bottom: none;
 	}
 }

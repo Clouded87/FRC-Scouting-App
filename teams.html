@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FRC Event Teams</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main>
+		<section class="hero">
+			<p class="eyebrow">Event Teams</p>
+			<h1>2026 Event Team List</h1>
+			<p class="summary">This list is loaded from event_teams.csv each time the page opens.</p>
+			<div class="hero-actions">
+				<a class="week-switch-button" href="main.html">Back To Schedule</a>
+			</div>
+		</section>
+
+		<section class="panel" aria-labelledby="teams-heading">
+			<div class="panel-header">
+				<div>
+					<h2 id="teams-heading">Teams</h2>
+					<p id="teams-meta">Waiting for team data.</p>
+				</div>
+			</div>
+
+			<div id="teams-status" class="status" role="status" aria-live="polite">Loading teams...</div>
+
+			<div class="schedule-wrapper">
+				<div id="teams-root"></div>
+			</div>
+		</section>
+	</main>
+
+	<script src="teams.js" defer></script>
+</body>
+</html>
